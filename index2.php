@@ -40,6 +40,27 @@
 <script type="IN/Login"></script>
 
 <!-- 4. Placeholder for the greeting -->
-<div id="profiles"></div>
+<div id="profiles">
+
+</div>
+<script type="IN/MemberData" data-ids="N8PeAYU0f1" data-fields="id, firstName, lastName, headline, pictureUrl, publicProfileUrl, industry">
+<div>
+  <ul>
+    <?js for (var key in $("*")) { ?>
+    <li>
+      <a href="<?js= $(key).publicProfileUrl ?>">
+        <?js if ($(key).pictureUrl) { ?>
+          <img src="<?js= $(key).pictureUrl ?>"></img>
+        <?js } ?>
+        <?js= $(key).firstName ?>
+        <?js= $(key).lastName ?>
+      </a>
+      <?js= $(key).headline ?>,
+      Industry: <?js= $(key).industry ?>
+    </li>
+    <?js } ?>
+  </ul>
+</div>
+</script>
 </body>
 </html>

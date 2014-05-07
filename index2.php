@@ -15,15 +15,24 @@
 
   // 2. Runs when the viewer has authenticated
   function onLinkedInAuth() {
-    IN.API.Profile("me").result(displayProfiles);
+    IN.API.Profile("me", "url=http://www.linkedin.com/in/jakobheuser")
+    	.fields("firstName", "lastName", "industry")
+    	.result(displayProfiles);
   }
 
   // 2. Runs when the Profile() API call returns successfully
   function displayProfiles(profiles) {
-    member = profiles.values[0];
-    document.getElementById("profiles").innerHTML = 
-      "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + "</p>";
-  }
+    // member = profiles.values[0];
+    // document.getElementById("profiles").innerHTML = 
+    //   "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + " who works in " + member.industry + "</p>";
+      var profilesDiv = document.getElementById("profiles");
+      var members = profiles.values;
+	  for (var member in members) {
+	    profilesDiv.innerHTML += "<p>" + members[member].firstName + " " + members[member].lastName 
+      + " works in the " + members[member].industry + " industry.";
+ 		 }
+	  }
+ 
 </script>
 </head>
 <body>

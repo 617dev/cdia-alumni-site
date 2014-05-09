@@ -1,3 +1,4 @@
+<?php include 'inc/alum-list.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,33 +8,7 @@
   onLoad: onLinkedInLoad
   authorize: true
 </script>
-<script type="text/javascript">
-  // 2. Runs when the JavaScript framework is loaded
-  function onLinkedInLoad() {
-    IN.Event.on(IN, "auth", onLinkedInAuth);
-  }
 
-  // 2. Runs when the viewer has authenticated
-  function onLinkedInAuth() {
-    IN.API.Profile("me", "url=http://www.linkedin.com/in/jakobheuser")
-    	.fields("firstName", "lastName", "industry")
-    	.result(displayProfiles);
-  }
-
-  // 2. Runs when the Profile() API call returns successfully
-  function displayProfiles(profiles) {
-    // member = profiles.values[0];
-    // document.getElementById("profiles").innerHTML = 
-    //   "<p id=\"" + member.id + "\">Hello " +  member.firstName + " " + member.lastName + " who works in " + member.industry + "</p>";
-      var profilesDiv = document.getElementById("profiles");
-      var members = profiles.values;
-	  for (var member in members) {
-	    profilesDiv.innerHTML += "<p>" + members[member].firstName + " " + members[member].lastName 
-      + " works in the " + members[member].industry + " industry.";
- 		 }
-	  }
- 
-</script>
 </head>
 <body>
 	<!-- 3. Displays a button to let the viewer authenticate -->
@@ -43,7 +18,10 @@
 <div id="profiles">
 
 </div>
-<script type="IN/MemberData" data-ids="N8PeAYU0f1" data-fields="id, firstName, lastName, headline, pictureUrl, publicProfileUrl, industry">
+
+<?php foreach ($alums as $alum): ?>
+
+<script type="IN/MemberData" data-ids="<?php echo $alum; ?>" data-fields="id, firstName, lastName, headline, pictureUrl, publicProfileUrl, industry">
 <div>
   <ul>
     <?js for (var key in $("*")) { ?>
@@ -62,5 +40,8 @@
   </ul>
 </div>
 </script>
+
+<?php endforeach ?>
+
 </body>
 </html>

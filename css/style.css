@@ -16,3 +16,59 @@ ol.list-unstyled li {
 p.listname {
 	display: inline;
 }
+
+
+
+/* ------------------------------------------------------------------------------------------*/
+/*//----- MEDIA QUERIES --------------------------------------------------------------------//*/
+/* ------------------------------------------------------------------------------------------*/
+
+		/* Large Devices, Wide Screens */
+		@media only screen and (max-width : 2400px) {
+			.img-thumbnail {
+				width: 150px;
+			}
+			.hidephotos {
+				display: none;
+			}
+		}
+
+		/* iPad */
+		@media only screen and (max-width : 1200px) {
+			.img-thumbnail {
+				width: 90px;
+			}
+		}
+
+		/* Medium Devices, Desktops */
+		@media only screen and (max-width : 992px) {
+			.img-thumbnail {
+				width: 70px;
+			}
+			.navbar-form .form-control {
+				max-width:150px;
+			}
+		}
+
+		/* Small Devices, Tablets */
+		@media only screen and (max-width : 768px) {
+			.img-thumbnail {
+				width: 70px;
+			}
+			.navbar-brand {
+				font-size: 14px;
+			}
+		}
+
+		/* Small Devices, (i)Phones */ 
+		@media only screen and (max-width : 480px) {
+
+			.photos {
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.hidephotos {
+				display:none;
+			}
+		}

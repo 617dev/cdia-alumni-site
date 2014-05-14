@@ -11,13 +11,49 @@
     <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script>
+
+    $(function(){
+      $("#filter").keyup(function(){
+    
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val(), count = 0;
+    
+        // Loop through the comment list
+        $(".results .blog-post").each(function(){
+    
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+    
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+                $(this).show();
+                count++;
+            }
+        });
+    
+        // Update the count
+        if (count == 1) {
+          $("#filter-count").text(count+" Search Result");
+        } else {
+          $("#filter-count").text(count+" Search Results");
+        }
+      });
+    })
+
+    </script>
+
     <style>
     .img-thumbnail {
       float:left;
       margin-right: 10px;
       width: 118px;
     }
-</style>
+  </style>
   </head>
 
   <body>
@@ -48,18 +84,19 @@
 
       <div class="blog-header">
         <h1 class="blog-title">Web Design and Development Alumni</h1>
-         <form role="form" class="form-inline">
+         <form id="live-search" role="form" class="form-inline" action="" method="post">
             <div class="form-group">
               <label for="searchbox">Search Alumni</label>
-              <input type="text" class="form-control" id="searchbox" placeholder="">
+              <input type="text" class="form-control" placeholder="" id="filter" value="">
             </div>
-            <button type="submit" class="btn btn-danger">Search</button>
+            <!-- <button type="submit" class="btn btn-danger">Search</button> -->
+            <span id="filter-count"></span>
         </form>
       </div>
 
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8 blog-main results">
           <hr>
           <div class="blog-post">
             <img src="img/profile_4.jpg" alt="profile_4" class="img-thumbnail">
@@ -67,30 +104,30 @@
             <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email 
               <span class="glyphicon glyphicon-envelope"></span></a></p>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          </div><!-- /.blog-post -->
           <hr>
+          </div><!-- /.blog-post -->
 
           <div class="blog-post">
             <img src="img/profile_2.jpg" alt="profile_4" class="img-thumbnail">
           <h4>Danielle Buczek</h4>
             <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          </div><!-- /.blog-post -->
           <hr>
+          </div><!-- /.blog-post -->
           <div class="blog-post">
             <img src="img/profile_1.jpg" alt="profile_4" class="img-thumbnail">
           <h4>Alex Rosenthal</h4>
             <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          </div><!-- /.blog-post -->
           <hr>
+          </div><!-- /.blog-post -->
           <div class="blog-post">
             <img src="img/profile_3.jpg" alt="profile_4" class="img-thumbnail">
           <h4>Chris Lamothe</h4>
             <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          </div><!-- /.blog-post -->
           <hr>
+          </div><!-- /.blog-post -->
 
           <ul class="pager">
             <li><a href="#">Previous</a></li>
@@ -230,7 +267,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

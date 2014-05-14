@@ -39,12 +39,9 @@
 	    </a>
       <?js= $(key).headline ?>
       <?js= $(key).location.name ?>
-      <?js for (var i = 0; i < threeCurrentPositions.values.length; i++) { ?>
+      <?js for (var i = 0; i < ($(key).threeCurrentPositions.values).length; i++) { ?>
       	<?js= $(key).threeCurrentPositions.values[i].title ?> at <?js= $(key).threeCurrentPositions.values[i].company.name ?>;
       <?js }; ?>
-      Current Position 1: <?js= $(key).threeCurrentPositions.values[0].title ?> at <?js= $(key).threeCurrentPositions.values[0].company.name ?><br />
-      Current Position 2: <?js= $(key).threeCurrentPositions.values[1].title ?> at <?js= $(key).threeCurrentPositions.values[1].company.name ?><br />
-      Past Position 1: <?js= $(key).threePastPositions.values[0].title ?> at <?js= $(key).threePastPositions.values[0].company.name ?><br />
 	  </li>
 	  <?js } ?>
 	</ul>

@@ -17,74 +17,58 @@ try {
 }
 
 $linkedinID = $_POST['linkedinID'];
-$linkedinURL = $_POST['profileURL'];
-$linkedinURL = preg_replace("(https?://)", "", $linkedinURL);
+$linkedinURL = preg_replace("(https?://)", "", $_POST['profileURL']);
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$pictureURL = $_POST['pictureURL'];
+$location = $_POST['location'];
+$email = $_POST['email'];
 
-// Check to see if user has already 'registered'
-$query = 'SELECT linkedin_id, linkedin_url FROM users';
+//look for linkedin_id to see if they are verified
+$query = 'SELECT linkedin_id, linkedin_url FROM users WHERE linkedin_id = ?';
 $stmt = $db->prepare($query);
-$result = $stmt->execute();
-$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
+$result = $stmt->execute(array($linkedinID));
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// if ($rows) {
-// 	foreach ($rows as $id) {
-// 		if ($id['linkedin_id'] == $linkedinID) {
-// 			$_SESSION['loggedIn'] = TRUE;
-// 			$_SESSION['userID'] = $linkedinID;
-// 			echo 'Welcome Back!';
-// 			break;
-// 		} else {
-// 			//check to see if LinkedIN profileURL is in our DB
-// 			foreach ($rows as $url) {
-// 				$checkURL = preg_replace("(https?://)", "", $url['linkedin_url']);
-// 				if ( $checkURL == $linkedinURL) {
-// 					// we have a profile match so add the user's LinkedIn ID to the db
-// 					// use the current $url['linkedin_url'] from the loop as that is what matches the entry in the db
-// 					$query = 'UPDATE users SET linkedin_id = ? WHERE linkedin_url = ?';
-// 					$stmt = $db->prepare($query);
-// 					$result = $stmt->execute(array($linkedinID, $url['linkedin_url']));
-// 					if ($result) {
-// 						// give the user
-// 						$_SESSION['loggedIn'] = TRUE;
-// 						$_SESSION['userID'] = $linkedinID;
-// 						echo 'Welcome!';
-// 						break;
-// 					} else {
-// 						echo 'DB update failed';
-// 						break;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-if ($rows) {
-	
-	foreach ($rows as $row) {
-		$checkURL = preg_replace("(https?://)", "", $row['linkedin_url']);
-		if ( $checkURL == $linkedinURL) {
-			// we have a profile match so check to see if the user's LinkedIn ID is in DB already
-			if ( $row['linkedin_id'] == $linkedinID) {
-				$_SESSION['loggedIn'] = TRUE;
-				$_SESSION['userID'] = $linkedinID;
-				echo 'Welcome Back!';
-			} else {
-				// use the current $url['linkedin_url'] from the loop as that is what matches the entry in the db
-				$query = 'UPDATE users SET linkedin_id = ? WHERE linkedin_url = ?';
+if ($row) {
+	//ID found, they are verified
+	$_SESSION['loggedIn'] = 'Yes';
+	$_SESSION['userID'] = $linkedinID;
+	echo 'Welcome Back!';
+	// update our db if necessary
+} else {
+	//ID not found, check to see if we have their url
+	$query = 'SELECT linkedin_id, linkedin_url FROM users';
+	$stmt = $db->prepare($query);
+	$result = $stmt->execute();
+	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	if ($rows) {
+		$found = FALSE;
+		foreach ($rows AS $row) {
+			$checkURL = preg_replace("(https?://)", "", $row['linkedin_url']);
+			if ($checkURL == $linkedinURL) {
+				// they are in our database so verify them by adding their linkedIn ID;
+				$query = 'UPDATE users SET linkedin_id = ?, first_name = ?, last_name = ?, picture_url = ?, location = ?, email = ? WHERE linkedin_url = ?';
 				$stmt = $db->prepare($query);
-				$result = $stmt->execute(array($linkedinID, $row['linkedin_url']));
+				$result = $stmt->execute(array($linkedinID, $firstName, $lastName, $pictureURL, $location, $email, $row['linkedin_url']));
 				if ($result) {
-					// give the user
-					$_SESSION['loggedIn'] = TRUE;
+					// give the user access
+					$_SESSION['loggedIn'] = 'Yes';
 					$_SESSION['userID'] = $linkedinID;
-					echo 'Welcome!';
-					break;
+					$found = TRUE;
+					echo 'Welcome to our awesome site!';
 				} else {
-					echo 'DB update failed';
-					break;
+					//user found but something went wrong
+					$found = TRUE;
+					echo 'DB update failed';					
 				}	
-			}		
+			}
+		}
+		if (!$found) {
+			// Their url was not in our db
+			echo 'We have no record of you being a CDIA alumnus';
 		}
 	}
 }
 ?>
+

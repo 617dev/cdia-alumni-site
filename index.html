@@ -11,9 +11,13 @@
     <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <script type="text/javascript" src="http://platform.linkedin.com/in.js"/>
        api_key: 77d9vq4le4equl
        authorize: true
+       onLoad: onLinkedInLoad
+
     </script>
   </head>
 
@@ -35,9 +39,6 @@
               <li><a href="about.html">About this project</a></li>
               <li><a href="terms.html">Terms of service</a></li>
            </ul>
-          <p><script type="in/Login">
-                      Hello, <?js= firstName ?> <?js= lastName ?>.
-                    </script></p>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
@@ -71,30 +72,33 @@
        
         <h2>Sign up now!</h2>
         <form class="form-horizontal" role="form">
+
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+
+              <script type="in/Login">
+                Hello, <?js= firstName ?> <?js= lastName ?>.
+                
+              </script>
+              <script>
+                function onLinkedInLoad() { 
+                  $('.IN-widget a').html('<button type="submit" id="li-submit" class="btn btn-danger">Sign in with linkedIn</button>');
+
+                  $('#li-submit').css({
+
+                  });
+                }
+              </script>
+              
             </div>
           </div>
           <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
                 <label>
                   <input type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
                 </label>
               </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-danger">Submit</button>
             </div>
           </div>
         </form>
@@ -153,7 +157,6 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
   </body>
 </html>

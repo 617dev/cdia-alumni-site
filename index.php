@@ -183,30 +183,18 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
     var pictureURL=member.pictureUrl;
     var email=member.emailAddress;
     // get current positions and create arrays for companies and titles
-    var companies = [];
-    var titles = [];
-    var jobs = member.threeCurrentPositions._total;
-    for (var i = 0; i < jobs; i++) {
-      companies.push(member.threeCurrentPositions.values[i].company.name);
-      titles.push(member.threeCurrentPositions.values[i].title);
-    }
-    // get current positions and create arrays for companies and titles
-    var pastCompanies = [];
-    var pastTitles = [];
-    var pastJobs = member.threePastPositions._total;
-    for (var j = 0; j < pastJobs; j++) {
-      pastCompanies.push(member.threePastPositions.values[j].company.name);
-      pastTitles.push(member.threePastPositions.values[j].title);
-    }
-    // make an ajax call to login/register/update the user
-    var str='linkedinID=' + id + '&profileURL=' + profileUrl + '&firstName=' + firstName + '&lastName=' + lastName + '&pictureURL=' + pictureURL + '&location=' + userLocation + '&email=' + email + '&companies=' + companies + '&titles=' + titles + '&pastCompanies=' + pastCompanies + '&pastTitles=' + pastTitles;
+    var current=JSON.stringify(member.threeCurrentPositions);
+    var past=JSON.stringify(member.threePastPositions);
+
+    var str='linkedinID=' + id + '&profileURL=' + profileUrl + '&firstName=' + firstName + '&lastName=' + lastName + '&pictureURL=' + pictureURL + '&location=' + userLocation + '&email=' + email + '&current=' + current + '&past=' + past;
 
     $.post('checkUser.php', str, function(data) {
         if (data = "access granted") {
           window.location.replace("profiles.php");
         } else {
           alert("We do not have a record of you being a CDIA alumnus.")
-        }   
+        }
+        //alert(data);
     });   
   };
 </script>

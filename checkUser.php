@@ -24,19 +24,16 @@ $pictureURL = $_POST['pictureURL'];
 $location = $_POST['location'];
 $email = $_POST['email'];
 //get current positions
-$company = explode(',', $_POST['companies']);
-$title = explode(',', $_POST['titles']);
-for ($i=0; $i < count($company); $i++) {
-	${'cur_comp' . ($i+1)} = $company[$i];
-	${'cur_title' . ($i+1)} = $title[$i];
+$current = json_decode($_POST['current']);
+$number = $current->{'_total'};
+for ($i=0; $i < $number; $i++) {
+	${'cur_comp' . ($i+1)} = $current->{'values'}[$i]->{'company'}->{'name'};
+	${'cur_title' . ($i+1)} = $current->{'values'}[$i]->{'title'};
 }
 //get past positions
-$past_company = explode(',', $_POST['pastCompanies']);
-$past_title = explode(',', $_POST['pastTitles']);
-for ($j=0; $j < count($past_company); $j++) {
-	${'past_comp' . ($j+1)} = $past_company[$j];
-	${'past_title' . ($j+1)} = $past_title[$j];
-}
+$past = json_decode($_POST['past']);
+$past_comp1 = $past->{'values'}[0]->{'company'}->{'name'};
+$past_title1 = $past->{'values'}[0]->{'title'};
 
 // Start the login/update process
 //look for linkedin_id to see if they are verified
@@ -77,14 +74,7 @@ if ($row) {
 				if (isset($past_comp1)) {
 					$query .= ', past1_title = "' . $past_title1 . '", past1_company = "' . $past_comp1 . '"';
 				}
-				if (isset($past_comp2)) {
-					$query .= ', past2_title = "' . $past_title2 . '", past2_company = "' . $past_comp2 . '"';
-				}
-				if (isset($past_comp3)) {
-					$query .= ', past3_title = "' . $past_title3 . '", past3_company = "' . $past_comp3 . '"';
-				}
 				$query .= ' WHERE linkedin_url = ?';
-
 				$stmt = $db->prepare($query);
 				$result = $stmt->execute(array($linkedinID, $firstName, $lastName, $pictureURL, $location, $email, $row['linkedin_url']));
 				if ($result) {
@@ -107,5 +97,6 @@ if ($row) {
 		}
 	}
 }
+
 ?>
 

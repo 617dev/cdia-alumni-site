@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+  include 'function.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -101,41 +104,7 @@
 
         <div class="col-sm-8 blog-main results">
           <hr>
-          <div class="blog-post">
-            <img src="img/profile_4.jpg" alt="profile_4" class="img-thumbnail">
-          <h4>Kelly Cross</h4>
-            <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email 
-              <span class="glyphicon glyphicon-envelope"></span></a></p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          <hr>
-          </div><!-- /.blog-post -->
-
-          <div class="blog-post">
-            <img src="img/profile_2.jpg" alt="profile_4" class="img-thumbnail">
-          <h4>Danielle Buczek</h4>
-            <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <hr>
-          </div><!-- /.blog-post -->
-          <div class="blog-post">
-            <img src="img/profile_1.jpg" alt="profile_4" class="img-thumbnail">
-          <h4>Alex Rosenthal</h4>
-            <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <hr>
-          </div><!-- /.blog-post -->
-          <div class="blog-post">
-            <img src="img/profile_3.jpg" alt="profile_4" class="img-thumbnail">
-          <h4>Chris Lamothe</h4>
-            <p><a href="#">Portfolio</a> <a href="#"><img src="img/LinkedinIcon.png" style="width:20px"/></a> <a class="btn btn-xs btn-default" href="#" role="button">Email <span class="glyphicon glyphicon-envelope"></span></a></p>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <hr>
-          </div><!-- /.blog-post -->
-
-          <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
+          <?php getProfiles(); ?>
 
         </div><!-- /.blog-main -->
 

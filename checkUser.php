@@ -49,6 +49,7 @@ if ($row) {
 	//ID found, they are verified
 	$_SESSION['loggedIn'] = 'Yes';
 	$_SESSION['userID'] = $linkedinID;
+	$_SESSION['userName'] = $firstName;
 	echo 'Welcome Back!';
 	// add update our db if we want (same code as below for successful first time registration)
 } else {
@@ -90,6 +91,7 @@ if ($row) {
 					// give the user access
 					$_SESSION['loggedIn'] = 'Yes';
 					$_SESSION['userID'] = $linkedinID;
+					$_SESSION['userName'] = $firstName;
 					$found = TRUE;
 					echo 'Welcome to our awesome site!';
 				} else {

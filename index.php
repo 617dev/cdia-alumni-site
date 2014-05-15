@@ -33,10 +33,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span style="color:white">Beta site</span></a>
+          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span style="color:white">Beta site</span></a>
         </div>
         <div class="navbar-collapse collapse">
            <ul class="nav navbar-nav" style="float:right">
+              <li><a href="profiles.php">View Alumni Profiles</a></li>
               <li><a href="about.html">About this project</a></li>
               <li><a href="terms.html">Terms of service</a></li>
            </ul>
@@ -201,8 +202,11 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
     var str='linkedinID=' + id + '&profileURL=' + profileUrl + '&firstName=' + firstName + '&lastName=' + lastName + '&pictureURL=' + pictureURL + '&location=' + userLocation + '&email=' + email + '&companies=' + companies + '&titles=' + titles + '&pastCompanies=' + pastCompanies + '&pastTitles=' + pastTitles;
 
     $.post('checkUser.php', str, function(data) {
-        alert(data);
-        location.reload();       
+        if (data = "access granted") {
+          window.location.replace("profiles.php");
+        } else {
+          alert("We do not have a record of you being a CDIA alumnus.")
+        }   
     });   
   };
 </script>

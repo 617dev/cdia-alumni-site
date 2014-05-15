@@ -50,7 +50,7 @@ if ($row) {
 	$_SESSION['loggedIn'] = 'Yes';
 	$_SESSION['userID'] = $linkedinID;
 	$_SESSION['userName'] = $firstName;
-	echo 'Welcome Back!';
+	echo 'access granted';
 	// add update our db if we want (same code as below for successful first time registration)
 } else {
 	//ID not found, check to see if we have their url
@@ -93,7 +93,7 @@ if ($row) {
 					$_SESSION['userID'] = $linkedinID;
 					$_SESSION['userName'] = $firstName;
 					$found = TRUE;
-					echo 'Welcome to our awesome site!';
+					echo 'access granted';
 				} else {
 					//user found but something went wrong
 					$found = TRUE;
@@ -103,7 +103,7 @@ if ($row) {
 		}
 		if (!$found) {
 			// Their url was not in our db
-			echo 'We have no record of you being a CDIA alumnus';
+			echo 'none shall pass';
 		}
 	}
 }

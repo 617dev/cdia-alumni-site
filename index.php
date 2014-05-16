@@ -91,7 +91,7 @@
 
                 <script>
                   function onLinkedInLoad() { 
-                    $('.IN-widget a').html('<button type="submit" class="btn btn-danger sign-in">Sign in with linkedIn</button>');
+                    $('.IN-widget a').html('<button type="submit" class="btn btn-success sign-in">Sign in with linkedIn</button>');
                   }
                 </script>
               </div>
@@ -107,9 +107,32 @@
            </div>
         </form>
 
-        <?php } else {
-          echo "<h3>Welcome " . $_SESSION['userName'] . "!</h3>";
-        } ?>
+        <?php } else { ?>
+
+          <h3>Welcome <?php echo $_SESSION['userName'] ?>!</h3>
+        
+          
+          <button class="sign-out btn btn-danger sign-in">Sign out</button>
+          
+          <script>
+
+          function onLinkedInLoad() { 
+
+            $('.sign-out').click(function(event) {
+              IN.User.logout(onLogOut);
+
+              function onLogOut(){
+                $.get('db/killsession.php', function(){
+                  // alert('session killed');
+                  window.location.href = window.location.href;
+                }); 
+              }
+            });
+          }
+          </script>
+
+        <?php } ?>
+        
       </div>
     </div>
   </div>

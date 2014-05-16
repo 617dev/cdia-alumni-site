@@ -12,6 +12,7 @@
     <meta name="author" content="CDIABU Alumni">
     <link rel="shortcut icon" href="favicon.ico">
     <title>CDIA BU Alumni</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -51,13 +52,6 @@
 
     </script>
 
-    <style>
-    .img-thumbnail {
-      float:left;
-      margin-right: 10px;
-      width: 118px;
-    }
-  </style>
   </head>
 
   <body>

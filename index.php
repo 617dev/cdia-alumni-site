@@ -73,38 +73,41 @@
         <div class="col-md-6"> <h1>Connect with CDIA alumns</h1>
       <?php if (!(isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == 'Yes'))) { ?>
         <h2>Sign up now!</h2>
-         <div class="form-group">
-            <div class="col-sm-10">
-              <div class="checkbox">
-                <label>
-                  <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
-                </label>
-              </div>
-            </div>
-          </div>
-        <form class="form-horizontal" role="form" id="login" style="display: none">
+         
+        <form class="form-horizontal" role="form" id="login">
 
           <div class="form-group">
             <div class="col-sm-10">
 
-              <script type="in/Login" data-onAuth="OnLinkedInAuth">
-                Hello, <?js= firstName ?> <?js= lastName ?>.
-                
-              </script>
-              <script>
-                function onLinkedInLoad() { 
-                  $('.IN-widget a').html('<button type="submit" id="li-submit" class="btn btn-danger">Sign in with linkedIn</button>');
+              <button type="submit" id="li-submit" class="disabled btn btn-danger" disabled>Sign in with linkedIn</button>
 
-                  $('#li-submit').css({
+              <div class="linkedIn-button" style="display:none;">
+                <script type="in/Login" data-onAuth="OnLinkedInAuth">
+                  Hello, <?js= firstName ?> <?js= lastName ?>.
+                  
+                </script>
 
-                  });
-                }
-              </script>
-             
+                <script>
+                  function onLinkedInLoad() { 
+                    $('.IN-widget a').html('<button type="submit" id="li-submit" class="btn btn-danger">Sign in with linkedIn</button>');
+                  }
+                </script>
+              </div>
               
             </div>
           </div>
         </form>
+        
+        <div class="form-group">
+           <div class="col-sm-10">
+             <div class="checkbox">
+               <label>
+                 <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
+               </label>
+             </div>
+           </div>
+         </div>
+
         <?php } else {
           echo "<h3>Welcome " . $_SESSION['userName'] . "!</h3>";
         } ?>
@@ -198,8 +201,15 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
     });   
   };
 </script>
-<script type="text/javascript">
-  $("#terms").on("click", function() {
-       $("#login").toggle();
+
+<script>
+  $("#terms").click(function() {
+      if (this.checked==true) {
+        $("button.disabled").hide();
+        $(".linkedIn-button").show();
+      } else {
+        $("button.disabled").show();
+        $(".linkedIn-button").hide();
+      } 
   })
 </script>

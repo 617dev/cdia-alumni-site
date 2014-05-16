@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span style="color:white">Beta site</span></a>
+          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span style="color:white; font-size: 12px;">beta site</span></a>
         </div>
         <div class="navbar-collapse collapse">
            <ul class="nav navbar-nav" style="float:right">
@@ -70,7 +70,7 @@
             <img src="img/profile_1.jpg" alt="profile_1" class="img-thumbnail">
           </div>
         </div>
-        <div class="col-md-6"> <h1>Connect with CDIA alumns</h1>
+        <div class="col-md-5"> <h1>Connect with CDIA alumni</h1>
       <?php if (!(isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == 'Yes'))) { ?>
         <h2>Sign up now!</h2>
          
@@ -78,8 +78,10 @@
 
           <div class="form-group">
             <div class="col-sm-10">
-
-              <button type="submit" id="li-submit" class="disabled btn btn-danger" disabled>Sign in with linkedIn</button>
+              
+              <div class="focus">
+                <button type="submit" class="disabled btn btn-danger sign-in" disabled>Sign in with linkedIn</button>
+              </div>
 
               <div class="linkedIn-button" style="display:none;">
                 <script type="in/Login" data-onAuth="OnLinkedInAuth">
@@ -89,24 +91,21 @@
 
                 <script>
                   function onLinkedInLoad() { 
-                    $('.IN-widget a').html('<button type="submit" id="li-submit" class="btn btn-danger">Sign in with linkedIn</button>');
+                    $('.IN-widget a').html('<button type="submit" class="btn btn-danger sign-in">Sign in with linkedIn</button>');
                   }
                 </script>
               </div>
-              
+
+              <div class="checkbox">
+                <label>
+                  <strong>You must accept our terms of use to enable the sign in button.</strong> <br/>
+                  <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
+                </label>
+              </div>
+
             </div>
-          </div>
-        </form>
-        
-        <div class="form-group">
-           <div class="col-sm-10">
-             <div class="checkbox">
-               <label>
-                 <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
-               </label>
-             </div>
            </div>
-         </div>
+        </form>
 
         <?php } else {
           echo "<h3>Welcome " . $_SESSION['userName'] . "!</h3>";
@@ -212,4 +211,8 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
         $(".linkedIn-button").hide();
       } 
   })
+
+  $(".focus").click(function() {
+    $("#terms").focus();
+  });
 </script>

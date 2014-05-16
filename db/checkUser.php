@@ -1,18 +1,7 @@
 <?php
-// this will most likely move to a connect.php include
+
 session_start();
-define( 'DB_HOST', 'localhost');
-	define( 'DB_USER', 'root');
-	define( 'DB_PASS', '');
-	define( 'DB_NAME', 'cdia');
-	
-try {
-	$connect = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
-	$db = new PDO( $connect, DB_USER, DB_PASS );	
-} catch ( PDOException $e ) {
-	die( "Error connecting to database: " . $e->getMessage() );
-}
-////
+include 'connect.php';
 
 //put posted info into variables
 $linkedinID = $_POST['linkedinID'];

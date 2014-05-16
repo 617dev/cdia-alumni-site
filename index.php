@@ -191,7 +191,7 @@ Football teams have Super Bowl trophies.  Mark Spitz has Olympic Gold Medals.  T
 
     var str='linkedinID=' + id + '&profileURL=' + profileUrl + '&firstName=' + firstName + '&lastName=' + lastName + '&pictureURL=' + pictureURL + '&location=' + userLocation + '&email=' + email + '&current=' + current + '&past=' + past;
 
-    $.post('checkUser.php', str, function(data) {
+    $.post('db/checkUser.php', str, function(data) {
         if (data = "access granted") {
           window.location.replace("profiles.php");
         } else {

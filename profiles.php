@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'function.php';
+  include 'db/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

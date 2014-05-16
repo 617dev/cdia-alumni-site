@@ -1,15 +1,5 @@
 <?php
-define( 'DB_HOST', 'localhost');
-	define( 'DB_USER', 'root');
-	define( 'DB_PASS', '');
-	define( 'DB_NAME', 'cdia');
-	
-try {
-	$connect = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
-	$db = new PDO( $connect, DB_USER, DB_PASS );	
-} catch ( PDOException $e ) {
-	die( "Error connecting to database: " . $e->getMessage() );
-}
+include 'connect.php';
 
 function getProfiles() {
 	global $db;
@@ -43,19 +33,12 @@ function getProfiles() {
 	            	<?php if ($row['past1_company'] !== '') {
 	            		echo '<li>' . $row['past1_title'] . ' at ' . $row['past1_company'] . '</li>';
 	            	} ?>
-	            	</ul>
-	            
-	         
+	            	</ul>         
 	          </div><!-- /.blog-post -->
 	           <hr>
 	    <?php
 			}
 		}
-
-
 	}
-
 }
-
-
 ?>

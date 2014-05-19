@@ -29,6 +29,11 @@ body {
 		font-family: Arial, Helvetica, sans-serif;
 	}
 
+.beta{
+	color:white;
+	font-size: 12px;
+}
+
 .brickred {
 	color: #d43f3a;
 }
@@ -98,15 +103,14 @@ button.disabled{
 }
 
 /*Profile page styles*/
-
 .blog-post {
 	min-height: 120px
 }
 
-.img-thumbnail {
-  float:left;
-  margin-right: 10px;
-  width: 100px;
+.profile-pic {
+	float:left;
+	margin-right: 10px;
+	width: 100px;
 }
 
 ul.positions {
@@ -126,8 +130,12 @@ ul.current.positions{
 		/* Large Devices, Wide Screens */
 		@media only screen and (max-width : 2400px) {
 			.img-thumbnail {
+				width: 120px;
+			}
+			.profile-pic {
 				width: 100px;
 			}
+
 			.hidephotos {
 				display: none;
 			}
@@ -143,27 +151,38 @@ ul.current.positions{
 		/* Medium Devices, Desktops */
 		@media only screen and (max-width : 992px) {
 			.img-thumbnail {
+				width: 70px;
+			}
+			.profile-pic {
 				width: 80px;
 			}
 			.navbar-form .form-control {
 				max-width:150px;
+			}
+			.jumbotron h1, .jumbotron .h1 {
+				font-size: 48px;
 			}
 		}
 
 		/* Small Devices, Tablets */
 		@media only screen and (max-width : 768px) {
 			.img-thumbnail {
+				width: 70px;
+			}
+			.profile-pic {
 				width: 80px;
 			}
 			.navbar-brand {
 				font-size: 14px;
 			}
-			
 		}
 
 		/* Small Devices, (i)Phones */ 
 		@media only screen and (max-width : 480px) {
 
+			.jumbotron h1, .jumbotron .h1 {
+				font-size: 40px;
+			}
 			.photos {
 				margin: 0 auto;
 				text-align: center;
@@ -172,8 +191,7 @@ ul.current.positions{
 			.hidephotos {
 				display:none;
 			}
-
-			.img-thumbnail {
+			.profile-pic {
 				width: 70px;
 			}
 			ul.positions {
@@ -182,5 +200,4 @@ ul.current.positions{
 			ul.current.positions{
 				margin-right: 15px;
 			}
-
 		}

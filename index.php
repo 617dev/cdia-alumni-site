@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span style="color:white; font-size: 12px;">beta site</span></a>
+          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span class="beta">beta site</span></a>
         </div>
         <div class="navbar-collapse collapse">
            <ul class="nav navbar-nav" style="float:right">
@@ -49,7 +49,7 @@
     <div class="jumbotron">
       <div class="container" style="padding-top: 30px">
         <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="photos">
             <img src="img/profile_3.jpg" alt="profile_3" class="img-thumbnail">
             <img src="img/profile_2.jpg" alt="profile_2" class="img-thumbnail">
@@ -71,8 +71,17 @@
             <img src="img/profile_1.jpg" alt="profile_1" class="img-thumbnail">
           </div>
         </div>
-        <div class="col-md-5"> <h1>Connect with CDIA alumni</h1>
+
+        <div class="col-md-5">
+
+         <h1>Connect with CDIA alumni</h1>
+
+        </div> 
+
+        <div class="col-md-7">
+        
       <?php if (!(isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == 'Yes'))) { ?>
+
         <h2>Sign up now!</h2>
          
         <form class="form-horizontal" role="form" id="login">

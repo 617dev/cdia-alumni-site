@@ -1,84 +1,9 @@
 <?php
   session_start();
   include 'db/functions.php';
+  include 'inc/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="CDIABU Alumni">
-    <meta name="author" content="CDIABU Alumni">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>CDIA BU Alumni</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <script>
-
-    $(function(){
-      $("#filter").keyup(function(){
-    
-        // Retrieve the input field text and reset the count to zero
-        var filter = $(this).val(), count = 0;
-    
-        // Loop through the comment list
-        $(".results .blog-post").each(function(){
-    
-            // If the list item does not contain the text phrase fade it out
-            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-                $(this).fadeOut();
-    
-            // Show the list item if the phrase matches and increase the count by 1
-            } else {
-                $(this).show();
-                count++;
-            }
-        });
-    
-        // Update the count
-        if (count == 1) {
-          $("#filter-count").text(count+" Search Result");
-        } else {
-          $("#filter-count").text(count+" Search Results");
-        }
-      });
-    })
-
-    </script>
-
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts | <span class="beta">Beta site</span></a>
-        </div>
-        <div class="navbar-collapse collapse">
-         <ul class="nav navbar-nav" style="float:right">
-              <li><a href="profiles.php">View Alumni Profiles</a></li>
-              <li><a href="about.html">About this project</a></li>
-              <li><a href="terms.html">Terms of service</a></li>
-           </ul>
-        <!--   <p><script type="in/Login">
-                      Hello, <?js= firstName ?> <?js= lastName ?>.
-                    </script></p> -->
-        </div><!--/.navbar-collapse -->
-      </div><!-- end of container -->
-    </div><!-- end of navbar -->
+<script src="js/search.js"></script>
 
 <div class="container" style="padding-top: 80px">
 
@@ -218,18 +143,8 @@
       <?php } ?>
           <hr>
 
-      <footer>
-        <div class="row">
-        <div class="col-md-4">
-        <p>&copy; CDIABU 2014</p>
-        </div>
-        <div class="col-md-4">
-        <p><a href="http://beantownweb.blogspot.com/2014/03/boston-web-tech-job-market-q1-2014.html">Boston Web Tech Market</a></p>
-        </div>
-        <div class="col-md-4">
-        <p><a href="http://beantownweb.blogspot.com/2014/01/bostons-rockstar-recruiters-q1-2014.html">Boston's Rockstar Recruiters</a></p>
-        </div>
-      </footer>
+      <?php include 'inc/footer.php'; ?>
+      
     </div> <!-- /container -->
 
 

@@ -123,6 +123,17 @@ ul.current.positions{
 	margin-right: 10px;
 }
 
+/*about us styles*/
+
+.about-us .devs li{
+	float: left;
+	margin-right: 15px;
+}
+.about-us .devs li:last-child{
+	margin-right: 0;
+}
+
+
 /* ------------------------------------------------------------------------------------------*/
 /*//----- MEDIA QUERIES --------------------------------------------------------------------//*/
 /* ------------------------------------------------------------------------------------------*/
@@ -162,6 +173,38 @@ ul.current.positions{
 			.jumbotron h1, .jumbotron .h1 {
 				font-size: 48px;
 			}
+
+			/*navbar collapse point fix*/
+
+		    .navbar-header {
+		        float: none;
+		    }
+		    .navbar-toggle {
+		        display: block;
+		    }
+		    .navbar-collapse {
+		        border-top: 1px solid transparent;
+		        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+		    }
+		    .navbar-collapse.collapse {
+		        display: none!important;
+		    }
+		    .navbar-collapse.collapse.in { 
+		    	display: block!important; 
+		    	margin-top: 0px; 
+		    }
+		    .navbar-nav {
+		        /*float: none!important;*/
+		        margin: 7.5px 15px;
+		    }
+		    .navbar-nav>li {
+		        float: none;
+		    }
+		    .navbar-nav>li>a {
+		        padding-top: 10px;
+		        padding-bottom: 10px;
+		    }
+			
 		}
 
 		/* Small Devices, Tablets */
@@ -199,5 +242,12 @@ ul.current.positions{
 			}
 			ul.current.positions{
 				margin-right: 15px;
+			}
+
+			.navbar-toggle {
+				margin-right: 2px;
+			}
+			.navbar-brand{
+				padding: 15px 0 15px 10px;
 			}
 		}

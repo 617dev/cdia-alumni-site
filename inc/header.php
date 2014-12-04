@@ -14,8 +14,12 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+<!-- original api key ~~ 77d9vq4le4equl -->
+<!-- api key ~~ cdiaalumni ~~ 775f41j6slabnb -->
+<!-- api key ~~ webskillswork ~~ 77ojcvmf82g41o -->
+
     <script type="text/javascript" src="http://platform.linkedin.com/in.js"/>
-       api_key: 77d9vq4le4equl
+       api_key: 775f41j6slabnb
        authorize: true
        onLoad: onLinkedInLoad
 
@@ -33,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts |<span class="beta"> beta</span></a>
+          <a class="navbar-brand" href="index.php"><img src="img/bu_logo.png"/> Center for Digital Imaging Arts |<span class="beta"> private beta</span></a>
         </div>
         <div class="navbar-collapse collapse">
            <ul class="nav navbar-nav" style="float:right">

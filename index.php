@@ -67,7 +67,7 @@
               <div class="checkbox">
                 <label>
                   <strong>You must accept our terms of use to enable the sign in button.</strong> <br/>
-                  <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.html">CDIABU Alumni terms of use</a>
+                  <input id="terms" type="checkbox"> Yes, I have read and accept the <a href="terms.php">CDIABU Alumni terms of use</a>
                 </label>
               </div>
 

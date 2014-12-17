@@ -138,7 +138,8 @@
       </div><!-- /.row -->
       <?php } else { ?>
           <h3>Sorry, but you must be logged in to access this page.</h3>
-          <h3>Please return <a href="index.php">here</a> to log in with you LinkedIn credentials.</h3>
+          <h3>Please return <a href="index.php">here</a> to log in with your LinkedIn credentials.</h3>
+          <h3>If you are a CDIA alumnus and still cannot log in, contact <a href="https://www.linkedin.com/in/genebabon" target="_blank">Gene Babon</a>.</h3>
           <br><br><br><br>
       <?php } ?>
           <hr>

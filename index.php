@@ -13,11 +13,11 @@
             <img src="img/profile_2.jpg" alt="profile_2" class="img-thumbnail">
             <img src="img/profile_4.jpg" alt="profile_4" class="img-thumbnail">
             <img src="img/profile_1.jpg" alt="profile_1" class="img-thumbnail">
-            <img src="img/profile_3.jpg" alt="profile_3" class="img-thumbnail">
-            <img src="img/profile_2.jpg" alt="profile_2" class="img-thumbnail">
-            <img src="img/profile_4.jpg" alt="profile_4" class="img-thumbnail">
-            <img src="img/profile_1.jpg" alt="profile_1" class="img-thumbnail">
-            <img src="img/profile_1.jpg" alt="profile_1" class="img-thumbnail">
+            <img src="img/profile_5.jpg" alt="profile_5" class="img-thumbnail">
+            <img src="img/profile_6.jpg" alt="profile_6" class="img-thumbnail">
+            <img src="img/profile_8.jpg" alt="profile_8" class="img-thumbnail">
+            <img src="img/profile_7.jpg" alt="profile_7" class="img-thumbnail">
+            <img src="img/profile_9.jpg" alt="profile_9" class="img-thumbnail">
           </div>
           <div class="hidephotos">
             <img src="img/profile_3.jpg" alt="profile_3" class="img-thumbnail">

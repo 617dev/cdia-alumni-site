@@ -119,7 +119,7 @@
         <div class="col-md-8">
 			<h2>Boston's Rockstar Recruiters</h2>
 			<p>In the fall of 2012 Beantown Web asked the question, "Who are Boston's Rockstar Recruiters?"  Welcome to the ninth installment of The List.  To begin the quest, Beantown Web identified more than 400 technology recruiters via LinkedIn.  Most are located in the Boston area.  Some are located in New Hampshire and Rhode Island and conduct a significant amount of business in the Boston area.</p>
-			<p><a class="btn btn-default" href="http://beantownweb.blogspot.com/2014/10/bostons-rockstar-recruiters-q4-2014.html" role="button" target="_blank">Read more &raquo;</a></p>
+			<p><a class="btn btn-default" href="http://beantownweb.blogspot.com/2015/01/bostons-rockstar-recruiters-q1-2015.html" role="button" target="_blank">Read more &raquo;</a></p>
 			<p>CDIA Alumni gain access to a proprietary database of the the Top 100 Technology Recruiters in Boston.</p>
        </div>
       </div>

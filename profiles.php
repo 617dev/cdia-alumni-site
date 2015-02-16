@@ -42,8 +42,9 @@
               <li>Adams-Lukowsky, Kaitlyn</li>
               <li>Ajamian, Nicole</li>
               <li>Albert, Misty (DelCid)</li>
-              <li>Almeida, Matthew</li>
               <li>Alidad, Sebastian</li>
+              <li>Almeida, Matthew</li>
+              <li>Almy, Kristiina</li>
               <li>Amarantos, Johnny</li>
               <li>Anderson, Christopher</li>
               <li>Anderson, Elin</li>
@@ -60,6 +61,7 @@
               <li>Baig, Abbas</li>
               <li>Balaisis, Orentas</li>
               <li>Bann, David</li>
+              <li>Barberio, Brandon</li>
               <li>Barry, Ed</li>
               <li>Basilone, Mary</li>
               <li>Bator, Brian</li>
@@ -70,8 +72,10 @@
               <li>Bean, Sandra</li>
               <li>Begin, Kyle</li>
               <li>Berkowitz, Jon</li>
+              <li>Bernardi, Chris</li>
               <li>Bettger, Jonathan</li>
               <li>Bivens, Josh</li>
+              <li>Blake, Seth</li>
               <li>Blom, Adam</li>
               <li>Bloom, Bobbi</li>
               <li>Bodzioch, Lee</li>
@@ -93,8 +97,10 @@
               <li>Caravella, Nicole</li>
               <li>Carbone, Elaine</li>
               <li>Carignan, Theresa</li>
+              <li>Carrión, Jaime</li>
               <li>Carroll, Paul</li>
               <li>Carvajal, Goyo</li>
+              <li>Casey, Donel</li>
               <li>Casey, Jon</li>
               <li>Cassel, Martha</li>
               <li>Casselman, Todd</li>
@@ -127,6 +133,7 @@
               <li>Coven, Liz (Menard)</li>
               <li>Covino, Emily</li>
               <li>Cranwell, Evan</li>
+              <li>Cronin, Joseph Anthony</li>
               <li>Cross, Kelly</li>
               <li>Cultrera, Laura</li>
               <li>D'Acci, Tara (Buzzell)</li>
@@ -148,18 +155,23 @@
               <li>DiBenedetto, Danielle (Slapak)</li>
               <li>DiGiacomo, Donna</li>
               <li>Dignam, Laura</li>
+              <li>DiLello, Bethany</li>
               <li>Diligent, Fred</li>
               <li>Dixon, Sarah</li>
               <li>Doherty, Don</li>
               <li>Doko, Gentjana</li>
               <li>Dolan, Barbara</li>
               <li>Dragani, Erica</li>
+              <li>Dubois, Sara</li>
               <li>Dunkle, Emily</li>
+              <li>Dunn, Gregory</li>
               <li>Dupoux, Sergia</li>
               <li>Dutton, Adam</li>
               <li>Dzevenskay, Tatiana</li>
+              <li>Edwards, Jono</li>
               <li>Ehrenzweig, Jill</li>
               <li>Ellis, Jon</li>
+              <li>Ellis, Tim</li>
               <li>England, Jennifer</li>
               <li>Enos, Justin</li>
               <li>Eom, Joo Young</li>
@@ -181,9 +193,11 @@
               <li>Forsberg, Zach</li>
               <li>Frank, Jarret</li>
               <li>Fruchtman, Shira</li>
+              <li>Fulghum, Stephen</li>
               <li>Gaffney, Trent</li>
               <li>Gale, Mariah</li>
               <li>Gallagher, Jessica</li>
+              <li>Gallimore, Lindsay</li>
               <li>Ganno, Tara</li>
               <li>Garcini, Alexander</li>
               <li>Geary, Mike</li>
@@ -226,6 +240,7 @@
               <li>Jacobson, Dan</li>
               <li>Jacquet, Katherine (Heger)</li>
               <li>Jannetty, John</li>
+              <li>Jannetty, Sara</li>
               <li>Jasset, John</li>
               <li>Jewett, Michael</li>
               <li>Johnston, Laura</li>
@@ -247,10 +262,12 @@
               <li>Kohnen, Matt</li>
               <li>Kolbech, Josie</li>
               <li>Kowal, Younia</li>
+              <li>Krieger, Laurie</li>
               <li>Krings, Werner</li>
               <li>Kupillas, Kevin</li>
               <li>Lamothe, Chris</li>
               <li>Langan, Courtney (Rank)</li>
+              <li>Lau, Rachel</li>
               <li>Laurenza, John</li>
               <li>Lavalle, Kelly</li>
               <li>Lawless, Kate</li>
@@ -297,6 +314,7 @@
               <li>McCarthy, Nicole</li>
               <li>McCue, Helen</li>
               <li>McGurty, Cheryl (Greatorex)</li>
+              <li>McHugh, Andrew</li>
               <li>McIntyre, Nancy</li>
               <li>McKee, Phyllis (Lurie)</li>
               <li>McKenna, Bobby</li>
@@ -357,6 +375,7 @@
               <li>Pendleton, Brie</li>
               <li>Percoco, Eric</li>
               <li>Percuoco, Phil</li>
+              <li>Pericotti, Jim</li>
               <li>Pierce, Michael</li>
               <li>Pinney, Emily</li>
               <li>Pitts, Christopher</li>
@@ -380,6 +399,7 @@
               <li>Reif-Caplan, Benjamin</li>
               <li>Relihan, Micaela</li>
               <li>Reny, Paul</li>
+              <li>Restrepo, Juan Camilo</li>
               <li>Ribot, Andres</li>
               <li>Rier, Amanda (Sueiro)</li>
               <li>Rier, Eric</li>
@@ -399,12 +419,14 @@
               <li>Ryczek, Mike</li>
               <li>Samargedlis, Michelle</li>
               <li>Santo, Beth</li>
+              <li>Sawyer, Charlene</li>
               <li>Scanlon, Chris</li>
               <li>Schaad, Cathy</li>
               <li>Schiavo, Mark</li>
               <li>Schmith, Karl</li>
               <li>Schultz, Erica</li>
               <li>Schwab, Melissa</li>
+              <li>Seifert, Brian</li>
               <li>Seri, Ingrid</li>
               <li>Severse, Josh</li>
               <li>Sibulkin, Tiffany (Souza)</li>
@@ -416,6 +438,7 @@
               <li>Smith, R.L.</li>
               <li>Smith, Robert</li>
               <li>Smith-Morgan, Nikki</li>
+              <li>Smyth, Stephen T.</li>
               <li>Sogor, Alyssa</li>
               <li>Solano, Matt</li>
               <li>Solomon, Lauren</li>
@@ -442,6 +465,7 @@
               <li>Testa, Stephanie (Paul)</li>
               <li>Thayer, Joshua</li>
               <li>Theisen, Stephanie (Picardo)</li>
+              <li>Therrien, Shari (Kreisberg)</li>
               <li>Thompson, Daniel</li>
               <li>Thorp, Emma</li>
               <li>Toce, Mark</li>
